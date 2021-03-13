@@ -37,10 +37,22 @@ pipeline {
       steps {
         //docker build -t dpothineni/currency-exchange-devops:$env.BUILD_TAG
         script {
-          docker.build("dpothineni/currency-exchange-devops:${env.BUILD_TAG}")
+          dockerImage = docker.build("dpothineni/currency-exchange-devops:${env.BUILD_TAG}")
         }
       }
     }
+    
+    stage('Push Docker Image') {
+      steps {
+        //docker build -t dpothineni/currency-exchange-devops:$env.BUILD_TAG
+        script {
+          docker.withRegistry('','dockerhub') {
+          dockerImage.push();
+          dockerImage.push('latest');
+          }
+        }
+      }
+    }    
   } 
    post {
         always {
