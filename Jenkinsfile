@@ -24,13 +24,13 @@ pipeline {
     stage('Test') {
         steps {
             echo "Test"
-            sh "mvn test"
+            //sh "mvn test"
         }
     }
     stage('IntegrationTest') {
          steps {
              echo "IntegrationTest"
-             sh "mvn failsafe:integration-test failsafe:verify"
+             //sh "mvn failsafe:integration-test failsafe:verify"
          }
     }
   } 
