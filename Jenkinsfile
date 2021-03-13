@@ -33,6 +33,13 @@ pipeline {
              //sh "mvn failsafe:integration-test failsafe:verify"
          }
     }
+    stage('Package') {
+         steps {
+             echo "Package"
+             //sh "mvn failsafe:integration-test failsafe:verify"
+             sh "mvn package -DskipTests"
+         }
+    }    
     stage('Build Docker Image') {
       steps {
         //docker build -t dpothineni/currency-exchange-devops:$env.BUILD_TAG
