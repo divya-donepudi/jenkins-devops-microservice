@@ -40,6 +40,7 @@ pipeline {
           docker.build("dpothineni/currency-exchange-devops:${env.BUILD_TAG}")
         }
       }
+    }
   } 
    post {
         always {
