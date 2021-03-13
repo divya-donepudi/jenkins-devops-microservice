@@ -1,20 +1,3 @@
-//scripted
-/*
-node {
-	stage('Build') {
-		echo "Build"
-	}
-	stage('Test') {
-		echo "Test"
-	}
-	stage('IntegrationTest') {
-		echo "Integration Test"
-	}
-}
-*/
-
-//declarative
-
 pipeline {
   agent any
   stages {
@@ -33,15 +16,5 @@ pipeline {
              echo "IntegrationTest"
          }
     }
-  } post {
-        always {
-            echo 'I am awesome. I always run always.'
-        }
-        success {
-            echo 'I run when you are successful'
-        }
-        failure {
-            echo 'I run when you fail'
-        }
-  }
+  } 
 }
