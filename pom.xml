@@ -26,8 +26,8 @@
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 		<spring-cloud.version>Greenwich.SR3</spring-cloud.version>
 
-    		<maven.compiler.target>1.8</maven.compiler.target>
-    		<maven.compiler.source>1.8</maven.compiler.source>
+    		<maven.compiler.target>1.9</maven.compiler.target>
+    		<maven.compiler.source>1.9</maven.compiler.source>
 
 		<surefire.version>2.22.1</surefire.version>
 		<failsafe.version>2.22.1</failsafe.version>
