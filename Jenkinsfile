@@ -33,6 +33,13 @@ pipeline {
              //sh "mvn failsafe:integration-test failsafe:verify"
          }
     }
+    stage('Build Docker Image') {
+      steps {
+        //docker build -t dpothineni/currency-exchange-devops:$env.BUILD_TAG
+        script {
+          docker.build("dpothineni/currency-exchange-devops:${env.BUILD_TAG}")
+        }
+      }
   } 
    post {
         always {
